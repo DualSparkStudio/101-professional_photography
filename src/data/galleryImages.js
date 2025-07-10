@@ -1,0 +1,338 @@
+export const galleryImages = [
+  // Wedding Photography Images
+  {
+    id: 1,
+    category_id: 1,
+    category_slug: 'wedding',
+    title: 'Romantic Wedding Ceremony',
+    description: 'A beautiful outdoor wedding ceremony captured in golden hour light.',
+    image: 'https://picsum.photos/800/600?random=101',
+    thumbnail: 'https://picsum.photos/300/300?random=101',
+    medium: 'https://picsum.photos/800/600?random=101',
+    large: 'https://picsum.photos/1920/1080?random=101',
+    is_featured: true,
+    order: 1,
+    date_taken: '2024-06-15',
+    location: 'Sunset Gardens, California'
+  },
+  {
+    id: 2,
+    category_id: 1,
+    category_slug: 'wedding',
+    title: 'Wedding Reception Dance',
+    description: 'The newlyweds sharing their first dance as husband and wife.',
+    image: 'https://picsum.photos/800/600?random=102',
+    thumbnail: 'https://picsum.photos/300/300?random=102',
+    medium: 'https://picsum.photos/800/600?random=102',
+    large: 'https://picsum.photos/1920/1080?random=102',
+    is_featured: true,
+    order: 2,
+    date_taken: '2024-06-15',
+    location: 'Grand Ballroom, California'
+  },
+  {
+    id: 3,
+    category_id: 1,
+    category_slug: 'wedding',
+    title: 'Bridal Portrait',
+    description: 'Elegant bridal portrait showcasing the beauty of the bride.',
+    image: 'https://picsum.photos/800/600?random=103',
+    thumbnail: 'https://picsum.photos/300/300?random=103',
+    medium: 'https://picsum.photos/800/600?random=103',
+    large: 'https://picsum.photos/1920/1080?random=103',
+    is_featured: false,
+    order: 3,
+    date_taken: '2024-06-15',
+    location: 'Botanical Gardens, California'
+  },
+  {
+    id: 4,
+    category_id: 1,
+    category_slug: 'wedding',
+    title: 'Wedding Rings Exchange',
+    description: 'The emotional moment of exchanging wedding rings.',
+    image: 'https://picsum.photos/800/600?random=104',
+    thumbnail: 'https://picsum.photos/300/300?random=104',
+    medium: 'https://picsum.photos/800/600?random=104',
+    large: 'https://picsum.photos/1920/1080?random=104',
+    is_featured: false,
+    order: 4,
+    date_taken: '2024-06-15',
+    location: 'Sunset Gardens, California'
+  },
+  {
+    id: 5,
+    category_id: 1,
+    category_slug: 'wedding',
+    title: 'Wedding Party Photos',
+    description: 'Fun and candid moments with the wedding party.',
+    image: 'https://picsum.photos/800/600?random=105',
+    thumbnail: 'https://picsum.photos/300/300?random=105',
+    medium: 'https://picsum.photos/800/600?random=105',
+    large: 'https://picsum.photos/1920/1080?random=105',
+    is_featured: false,
+    order: 5,
+    date_taken: '2024-06-15',
+    location: 'Botanical Gardens, California'
+  },
+  {
+    id: 6,
+    category_id: 1,
+    category_slug: 'wedding',
+    title: 'Wedding Venue Details',
+    description: 'Beautiful details and decorations of the wedding venue.',
+    image: 'https://picsum.photos/800/600?random=106',
+    thumbnail: 'https://picsum.photos/300/300?random=106',
+    medium: 'https://picsum.photos/800/600?random=106',
+    large: 'https://picsum.photos/1920/1080?random=106',
+    is_featured: false,
+    order: 6,
+    date_taken: '2024-06-15',
+    location: 'Grand Ballroom, California'
+  },
+
+  // Portrait Photography Images
+  {
+    id: 7,
+    category_id: 3,
+    category_slug: 'portrait',
+    title: 'Professional Headshot',
+    description: 'Professional headshot for business and corporate use.',
+    image: 'https://picsum.photos/800/600?random=301',
+    thumbnail: 'https://picsum.photos/300/300?random=301',
+    medium: 'https://picsum.photos/800/600?random=301',
+    large: 'https://picsum.photos/1920/1080?random=301',
+    is_featured: true,
+    order: 1,
+    date_taken: '2024-05-20',
+    location: 'Studio Portrait, New York'
+  },
+  {
+    id: 8,
+    category_id: 3,
+    category_slug: 'portrait',
+    title: 'Artistic Portrait',
+    description: 'Creative and artistic portrait with dramatic lighting.',
+    image: 'https://picsum.photos/800/600?random=302',
+    thumbnail: 'https://picsum.photos/300/300?random=302',
+    medium: 'https://picsum.photos/800/600?random=302',
+    large: 'https://picsum.photos/1920/1080?random=302',
+    is_featured: true,
+    order: 2,
+    date_taken: '2024-05-22',
+    location: 'Art Studio, New York'
+  },
+  {
+    id: 9,
+    category_id: 3,
+    category_slug: 'portrait',
+    title: 'Business Portrait',
+    description: 'Professional business portrait for executives.',
+    image: 'https://picsum.photos/800/600?random=303',
+    thumbnail: 'https://picsum.photos/300/300?random=303',
+    medium: 'https://picsum.photos/800/600?random=303',
+    large: 'https://picsum.photos/1920/1080?random=303',
+    is_featured: false,
+    order: 3,
+    date_taken: '2024-05-25',
+    location: 'Corporate Studio, New York'
+  },
+  {
+    id: 10,
+    category_id: 3,
+    category_slug: 'portrait',
+    title: 'Creative Portrait Session',
+    description: 'Creative portrait session with unique styling and concepts.',
+    image: 'https://picsum.photos/800/600?random=304',
+    thumbnail: 'https://picsum.photos/300/300?random=304',
+    medium: 'https://picsum.photos/800/600?random=304',
+    large: 'https://picsum.photos/1920/1080?random=304',
+    is_featured: false,
+    order: 4,
+    date_taken: '2024-05-28',
+    location: 'Creative Studio, New York'
+  },
+  {
+    id: 11,
+    category_id: 3,
+    category_slug: 'portrait',
+    title: 'Executive Portrait',
+    description: 'High-end executive portrait for corporate leadership.',
+    image: 'https://picsum.photos/800/600?random=305',
+    thumbnail: 'https://picsum.photos/300/300?random=305',
+    medium: 'https://picsum.photos/800/600?random=305',
+    large: 'https://picsum.photos/1920/1080?random=305',
+    is_featured: false,
+    order: 5,
+    date_taken: '2024-06-01',
+    location: 'Executive Studio, New York'
+  },
+
+  // Event Photography Images
+  {
+    id: 12,
+    category_id: 5,
+    category_slug: 'corporate',
+    title: 'Corporate Conference',
+    description: 'Professional coverage of a major corporate conference.',
+    image: 'https://picsum.photos/800/600?random=501',
+    thumbnail: 'https://picsum.photos/300/300?random=501',
+    medium: 'https://picsum.photos/800/600?random=501',
+    large: 'https://picsum.photos/1920/1080?random=501',
+    is_featured: true,
+    order: 1,
+    date_taken: '2024-04-15',
+    location: 'Convention Center, Chicago'
+  },
+  {
+    id: 13,
+    category_id: 5,
+    category_slug: 'corporate',
+    title: 'Product Launch Event',
+    description: 'Exciting product launch event with live demonstrations.',
+    image: 'https://picsum.photos/800/600?random=502',
+    thumbnail: 'https://picsum.photos/300/300?random=502',
+    medium: 'https://picsum.photos/800/600?random=502',
+    large: 'https://picsum.photos/1920/1080?random=502',
+    is_featured: true,
+    order: 2,
+    date_taken: '2024-04-18',
+    location: 'Tech Hub, Chicago'
+  },
+  {
+    id: 14,
+    category_id: 5,
+    category_slug: 'corporate',
+    title: 'Awards Ceremony',
+    description: 'Elegant awards ceremony celebrating achievements.',
+    image: 'https://picsum.photos/800/600?random=503',
+    thumbnail: 'https://picsum.photos/300/300?random=503',
+    medium: 'https://picsum.photos/800/600?random=503',
+    large: 'https://picsum.photos/1920/1080?random=503',
+    is_featured: false,
+    order: 3,
+    date_taken: '2024-04-20',
+    location: 'Grand Hotel, Chicago'
+  },
+  {
+    id: 15,
+    category_id: 5,
+    category_slug: 'corporate',
+    title: 'Team Building Event',
+    description: 'Fun team building activities captured in action.',
+    image: 'https://picsum.photos/800/600?random=504',
+    thumbnail: 'https://picsum.photos/300/300?random=504',
+    medium: 'https://picsum.photos/800/600?random=504',
+    large: 'https://picsum.photos/1920/1080?random=504',
+    is_featured: false,
+    order: 4,
+    date_taken: '2024-04-22',
+    location: 'Adventure Park, Chicago'
+  },
+
+  // Birthday Parties Images
+  {
+    id: 16,
+    category_id: 4,
+    category_slug: 'birthday',
+    title: 'Birthday Celebration',
+    description: 'Joyful birthday celebration with family and friends.',
+    image: 'https://picsum.photos/800/600?random=401',
+    thumbnail: 'https://picsum.photos/300/300?random=401',
+    medium: 'https://picsum.photos/800/600?random=401',
+    large: 'https://picsum.photos/1920/1080?random=401',
+    is_featured: true,
+    order: 1,
+    date_taken: '2024-05-10',
+    location: 'Family Home, Miami'
+  },
+  {
+    id: 17,
+    category_id: 4,
+    category_slug: 'birthday',
+    title: 'Birthday Cake Moment',
+    description: 'The special moment of blowing out birthday candles.',
+    image: 'https://picsum.photos/800/600?random=402',
+    thumbnail: 'https://picsum.photos/300/300?random=402',
+    medium: 'https://picsum.photos/800/600?random=402',
+    large: 'https://picsum.photos/1920/1080?random=402',
+    is_featured: false,
+    order: 2,
+    date_taken: '2024-05-10',
+    location: 'Family Home, Miami'
+  },
+  {
+    id: 18,
+    category_id: 4,
+    category_slug: 'birthday',
+    title: 'Party Activities',
+    description: 'Fun party activities and games for all ages.',
+    image: 'https://picsum.photos/800/600?random=403',
+    thumbnail: 'https://picsum.photos/300/300?random=403',
+    medium: 'https://picsum.photos/800/600?random=403',
+    large: 'https://picsum.photos/1920/1080?random=403',
+    is_featured: false,
+    order: 3,
+    date_taken: '2024-05-10',
+    location: 'Family Home, Miami'
+  },
+
+  // Baby & Family Images
+  {
+    id: 19,
+    category_id: 6,
+    category_slug: 'family',
+    title: 'Family Portrait Session',
+    description: 'Beautiful family portrait session in natural light.',
+    image: 'https://picsum.photos/800/600?random=601',
+    thumbnail: 'https://picsum.photos/300/300?random=601',
+    medium: 'https://picsum.photos/800/600?random=601',
+    large: 'https://picsum.photos/1920/1080?random=601',
+    is_featured: true,
+    order: 1,
+    date_taken: '2024-05-15',
+    location: 'City Park, Miami'
+  },
+  {
+    id: 20,
+    category_id: 6,
+    category_slug: 'family',
+    title: 'Baby Photography',
+    description: 'Precious moments with newborn baby photography.',
+    image: 'https://picsum.photos/800/600?random=602',
+    thumbnail: 'https://picsum.photos/300/300?random=602',
+    medium: 'https://picsum.photos/800/600?random=602',
+    large: 'https://picsum.photos/1920/1080?random=602',
+    is_featured: true,
+    order: 2,
+    date_taken: '2024-05-18',
+    location: 'Home Studio, Miami'
+  },
+  {
+    id: 21,
+    category_id: 6,
+    category_slug: 'family',
+    title: 'Family Outdoor Session',
+    description: 'Outdoor family photography session in beautiful natural settings.',
+    image: 'https://picsum.photos/800/600?random=603',
+    thumbnail: 'https://picsum.photos/300/300?random=603',
+    medium: 'https://picsum.photos/800/600?random=603',
+    large: 'https://picsum.photos/1920/1080?random=603',
+    is_featured: false,
+    order: 3,
+    date_taken: '2024-05-20',
+    location: 'Beach Park, Miami'
+  }
+]
+
+export const getImagesByCategory = (categorySlug) => {
+  return galleryImages.filter(image => image.category_slug === categorySlug)
+}
+
+export const getFeaturedImages = () => {
+  return galleryImages.filter(image => image.is_featured)
+}
+
+export const getImageById = (id) => {
+  return galleryImages.find(image => image.id === id)
+} 
