@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useParams } from 'react-router-dom'
-import { getCategoryBySlug, getImagesByCategory } from '../data/categories'
+import { getCategoryBySlug } from '../data/categories'
+import { getImagesByCategory } from '../data/galleryImages'
 
 const GalleryDetail = () => {
   const { slug } = useParams()
