@@ -30,16 +30,16 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative py-20 bg-neutral-900">
+        <div className="absolute inset-0 bg-neutral-900/80"></div>
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center text-white"
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+            <h1 className="heading-large text-white mb-6">
               Get In Touch
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
@@ -50,31 +50,31 @@ const Contact = () => {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="section-padding bg-gradient-subtle">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl shadow-lg p-8"
+              className="bg-white rounded-2xl shadow-soft p-8 lg:p-12"
             >
-              <h2 className="text-3xl font-display font-bold mb-6">
+              <h2 className="heading-medium mb-8">
                 Send Us a Message
               </h2>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Full Name *
                     </label>
                     <input
                       type="text"
                       {...register('name', { required: 'Name is required' })}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                        errors.name ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.name ? 'border-red-500 focus:ring-red-500' : ''
                       }`}
                       placeholder="Your full name"
                     />
@@ -84,7 +84,7 @@ const Contact = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Email *
                     </label>
                     <input
@@ -96,8 +96,8 @@ const Contact = () => {
                           message: 'Invalid email address'
                         }
                       })}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.email ? 'border-red-500 focus:ring-red-500' : ''
                       }`}
                       placeholder="your.email@example.com"
                     />
@@ -109,24 +109,24 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Phone Number
                     </label>
                     <input
                       type="tel"
                       {...register('phone')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="form-input"
                       placeholder="+1234567890"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Event Type
                     </label>
                     <select
                       {...register('eventType')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="form-input"
                     >
                       <option value="">Select event type</option>
                       <option value="wedding">Wedding Photography</option>
@@ -140,38 +140,38 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Event Date
                     </label>
                     <input
                       type="date"
                       {...register('eventDate')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="form-input"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Budget Range
                     </label>
                     <input
                       type="text"
                       {...register('budget')}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="form-input"
                       placeholder="e.g., $2000-$5000"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="form-label">
                     Message *
                   </label>
                   <textarea
                     {...register('message', { required: 'Message is required' })}
                     rows={5}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                      errors.message ? 'border-red-500' : 'border-gray-300'
+                    className={`form-textarea ${
+                      errors.message ? 'border-red-500 focus:ring-red-500' : ''
                     }`}
                     placeholder="Tell us about your photography needs, event details, and any special requirements..."
                   />
@@ -210,24 +210,24 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-display font-bold mb-6">
+                <h2 className="heading-medium mb-6">
                   Contact Information
                 </h2>
-                <p className="text-lg text-gray-600 mb-8">
+                <p className="text-body mb-8">
                   Get in touch with us to discuss your photography needs. We're here to help you capture your special moments.
                 </p>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-white">
                     <Mail size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Email</h3>
+                    <h3 className="font-semibold text-lg mb-2">Email</h3>
                     <a 
                       href={`mailto:${siteSettings.email}`}
-                      className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
+                      className="text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
                     >
                       {siteSettings.email}
                     </a>
@@ -235,14 +235,14 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-white">
                     <Phone size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Phone</h3>
+                    <h3 className="font-semibold text-lg mb-2">Phone</h3>
                     <a 
                       href={`tel:${siteSettings.phone}`}
-                      className="text-gray-600 hover:text-primary-600 transition-colors duration-300"
+                      className="text-neutral-600 hover:text-neutral-900 transition-colors duration-300"
                     >
                       {siteSettings.phone}
                     </a>
@@ -250,78 +250,51 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-white">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Address</h3>
-                    <p className="text-gray-600">
-                      {siteSettings.address}
+                    <h3 className="font-semibold text-lg mb-2">Location</h3>
+                    <p className="text-neutral-600">
+                      {siteSettings.location}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center text-white">
+                  <div className="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-white">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Working Hours</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-lg mb-2">Working Hours</h3>
+                    <p className="text-neutral-600">
                       {siteSettings.working_hours}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Social Media */}
-              <div className="pt-8 border-t border-gray-200">
-                <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  {siteSettings.instagram_url && (
-                    <a
-                      href={siteSettings.instagram_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                  )}
-                  
-                  {siteSettings.facebook_url && (
-                    <a
-                      href={siteSettings.facebook_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  )}
-                  
-                  {siteSettings.twitter_url && (
-                    <a
-                      href={siteSettings.twitter_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  )}
-                  
-                  {siteSettings.whatsapp_number && (
-                    <a
-                      href={`https://wa.me/${siteSettings.whatsapp_number}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform duration-300"
-                    >
-                      <i className="fab fa-whatsapp"></i>
-                    </a>
-                  )}
-                </div>
+              {/* Additional Info */}
+              <div className="bg-white/50 rounded-xl p-6 border border-neutral-200">
+                <h3 className="font-semibold text-lg mb-3">What to Expect</h3>
+                <ul className="space-y-2 text-neutral-600">
+                  <li className="flex items-start space-x-2">
+                    <i className="fas fa-check text-accent-500 mt-1 text-sm"></i>
+                    <span>Quick response within 24 hours</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <i className="fas fa-check text-accent-500 mt-1 text-sm"></i>
+                    <span>Free consultation and quote</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <i className="fas fa-check text-accent-500 mt-1 text-sm"></i>
+                    <span>Flexible scheduling options</span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <i className="fas fa-check text-accent-500 mt-1 text-sm"></i>
+                    <span>Professional service guarantee</span>
+                  </li>
+                </ul>
               </div>
             </motion.div>
           </div>

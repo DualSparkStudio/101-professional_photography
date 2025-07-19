@@ -34,26 +34,29 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-black/95 backdrop-blur-md shadow-lg' 
+          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-neutral-100' 
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-3">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="w-8 h-8 lg:w-10 lg:h-10 bg-neutral-900 rounded-lg flex items-center justify-center"
             >
-              <i className="fas fa-camera text-2xl text-white"></i>
+              <i className="fas fa-camera text-white text-sm lg:text-base"></i>
             </motion.div>
-            <span className="text-xl lg:text-2xl font-display font-semibold text-white">
+            <span className={`text-lg lg:text-xl font-semibold transition-colors duration-300 ${
+              isScrolled ? 'text-neutral-900' : 'text-white'
+            }`}>
               {siteSettings.photographer_name}
             </span>
           </Link>
@@ -64,14 +67,20 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`relative text-white hover:text-primary-300 transition-colors duration-300 ${
-                  location.pathname === item.path ? 'text-primary-300' : ''
+                className={`relative nav-link transition-all duration-300 ${
+                  isScrolled ? 'text-neutral-600 hover:text-neutral-900' : 'text-white/90 hover:text-white'
+                } ${
+                  location.pathname === item.path 
+                    ? (isScrolled ? 'text-neutral-900 font-semibold' : 'text-white font-semibold') 
+                    : ''
                 }`}
               >
                 {item.name}
                 {location.pathname === item.path && (
                   <motion.div
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-300"
+                    className={`absolute -bottom-1 left-0 right-0 h-0.5 ${
+                      isScrolled ? 'bg-neutral-900' : 'bg-white'
+                    }`}
                     layoutId="navbar-indicator"
                   />
                 )}
@@ -80,15 +89,17 @@ const Navbar = () => {
             
             {/* Gallery Dropdown */}
             <div className="relative group">
-              <button className="text-white hover:text-primary-300 transition-colors duration-300 flex items-center space-x-1">
+              <button className={`transition-all duration-300 flex items-center space-x-1 ${
+                isScrolled ? 'text-neutral-600 hover:text-neutral-900' : 'text-white/90 hover:text-white'
+              }`}>
                 <span>Gallery</span>
-                <i className="fas fa-chevron-down text-xs"></i>
+                <i className="fas fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
               </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top">
+              <div className="absolute top-full left-0 mt-3 w-64 bg-white rounded-xl shadow-large opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top border border-neutral-100">
                 <div className="py-2">
                   <Link
                     to="/gallery"
-                    className="block px-4 py-2 text-gray-800 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                    className="block px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-all duration-200 text-sm"
                   >
                     All Galleries
                   </Link>
@@ -96,7 +107,7 @@ const Navbar = () => {
                     <Link
                       key={category.slug}
                       to={`/gallery/${category.slug}`}
-                      className="block px-4 py-2 text-gray-800 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                      className="block px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-all duration-200 text-sm"
                     >
                       {category.name}
                     </Link>
@@ -107,9 +118,11 @@ const Navbar = () => {
 
             {/* Search Button */}
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-white hover:text-primary-300 transition-colors duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`transition-colors duration-300 ${
+                isScrolled ? 'text-neutral-600 hover:text-neutral-900' : 'text-white/90 hover:text-white'
+              }`}
             >
               <Search size={20} />
             </motion.button>
@@ -117,9 +130,11 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="lg:hidden text-white"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`lg:hidden transition-colors duration-300 ${
+              isScrolled ? 'text-neutral-900' : 'text-white'
+            }`}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -134,15 +149,15 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden bg-black/95 backdrop-blur-md rounded-lg mt-2 overflow-hidden"
+              className="lg:hidden bg-white/95 backdrop-blur-md rounded-xl mt-3 overflow-hidden shadow-large border border-neutral-100"
             >
-              <div className="py-4 space-y-2">
+              <div className="py-4 space-y-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`block px-4 py-2 text-white hover:bg-white/10 transition-colors duration-200 ${
-                      location.pathname === item.path ? 'bg-primary-500/20 text-primary-300' : ''
+                    className={`block px-4 py-3 text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-all duration-200 ${
+                      location.pathname === item.path ? 'bg-neutral-100 text-neutral-900 font-medium' : ''
                     }`}
                   >
                     {item.name}
@@ -150,13 +165,13 @@ const Navbar = () => {
                 ))}
                 
                 {/* Mobile Gallery Submenu */}
-                <div className="px-4 py-2">
-                  <div className="text-white/70 text-sm font-medium mb-2">Gallery Categories:</div>
+                <div className="px-4 py-3 border-t border-neutral-100">
+                  <div className="text-neutral-500 text-sm font-medium mb-3">Gallery Categories:</div>
                   {featuredCategories.map((category) => (
                     <Link
                       key={category.slug}
                       to={`/gallery/${category.slug}`}
-                      className="block py-1 text-white/80 hover:text-primary-300 transition-colors duration-200 text-sm"
+                      className="block py-2 text-neutral-600 hover:text-neutral-900 transition-colors duration-200 text-sm"
                     >
                       {category.name}
                     </Link>
